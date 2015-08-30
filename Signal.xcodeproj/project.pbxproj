@@ -12,6 +12,8 @@
 		BD066E851B92F9FD00424CAA /* Signal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD066E671B92F69D00424CAA /* Signal.framework */; settings = {ASSET_TAGS = (); }; };
 		BDB843411B92FFFC002D4CA8 /* Quality.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB843401B92FFFC002D4CA8 /* Quality.swift */; settings = {ASSET_TAGS = (); }; };
 		BDB843431B93000A002D4CA8 /* QualityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB843421B93000A002D4CA8 /* QualityTests.swift */; settings = {ASSET_TAGS = (); }; };
+		BDB843461B9300BC002D4CA8 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB843451B9300BC002D4CA8 /* System.swift */; settings = {ASSET_TAGS = (); }; };
+		BDB843481B9300C8002D4CA8 /* SystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB843471B9300C8002D4CA8 /* SystemTests.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 		BD066E841B92F9FD00424CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDB843401B92FFFC002D4CA8 /* Quality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quality.swift; sourceTree = "<group>"; };
 		BDB843421B93000A002D4CA8 /* QualityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QualityTests.swift; sourceTree = "<group>"; };
+		BDB843451B9300BC002D4CA8 /* System.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
+		BDB843471B9300C8002D4CA8 /* SystemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 			children = (
 				BD066E841B92F9FD00424CAA /* Info.plist */,
 				BDB843421B93000A002D4CA8 /* QualityTests.swift */,
+				BDB843471B9300C8002D4CA8 /* SystemTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -108,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				BDB843401B92FFFC002D4CA8 /* Quality.swift */,
+				BDB843451B9300BC002D4CA8 /* System.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -229,6 +235,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDB843461B9300BC002D4CA8 /* System.swift in Sources */,
+				BDB843481B9300C8002D4CA8 /* SystemTests.swift in Sources */,
 				BDB843431B93000A002D4CA8 /* QualityTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
