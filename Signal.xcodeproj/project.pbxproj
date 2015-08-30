@@ -10,6 +10,8 @@
 		BD066E751B92F6E600424CAA /* Signal.h in Headers */ = {isa = PBXBuildFile; fileRef = BD066E731B92F6E600424CAA /* Signal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BD066E791B92F72300424CAA /* Base.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = BD066E781B92F72300424CAA /* Base.xcconfig */; settings = {ASSET_TAGS = (); }; };
 		BD066E851B92F9FD00424CAA /* Signal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD066E671B92F69D00424CAA /* Signal.framework */; settings = {ASSET_TAGS = (); }; };
+		BDB843411B92FFFC002D4CA8 /* Quality.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB843401B92FFFC002D4CA8 /* Quality.swift */; settings = {ASSET_TAGS = (); }; };
+		BDB843431B93000A002D4CA8 /* QualityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB843421B93000A002D4CA8 /* QualityTests.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +33,8 @@
 		BD066E7B1B92F98400424CAA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BD066E801B92F9FD00424CAA /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD066E841B92F9FD00424CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDB843401B92FFFC002D4CA8 /* Quality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quality.swift; sourceTree = "<group>"; };
+		BDB843421B93000A002D4CA8 /* QualityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QualityTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				BD066E731B92F6E600424CAA /* Signal.h */,
+				BDB843441B93004A002D4CA8 /* Utility */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -94,8 +99,17 @@
 			isa = PBXGroup;
 			children = (
 				BD066E841B92F9FD00424CAA /* Info.plist */,
+				BDB843421B93000A002D4CA8 /* QualityTests.swift */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		BDB843441B93004A002D4CA8 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				BDB843401B92FFFC002D4CA8 /* Quality.swift */,
+			);
+			name = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +168,7 @@
 		BD066E5E1B92F69D00424CAA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = felixgabel;
 				TargetAttributes = {
@@ -206,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDB843411B92FFFC002D4CA8 /* Quality.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDB843431B93000A002D4CA8 /* QualityTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +332,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BD066E781B92F72300424CAA /* Base.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -327,6 +345,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.felixgabel.Signal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -334,6 +353,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BD066E781B92F72300424CAA /* Base.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -352,17 +372,20 @@
 		BD066E891B92F9FD00424CAA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.felixgabel.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		BD066E8A1B92F9FD00424CAA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
