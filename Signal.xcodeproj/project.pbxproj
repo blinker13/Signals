@@ -9,7 +9,18 @@
 /* Begin PBXBuildFile section */
 		BD066E751B92F6E600424CAA /* Signal.h in Headers */ = {isa = PBXBuildFile; fileRef = BD066E731B92F6E600424CAA /* Signal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BD066E791B92F72300424CAA /* Base.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = BD066E781B92F72300424CAA /* Base.xcconfig */; settings = {ASSET_TAGS = (); }; };
+		BD066E851B92F9FD00424CAA /* Signal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD066E671B92F69D00424CAA /* Signal.framework */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BD066E861B92F9FD00424CAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD066E5E1B92F69D00424CAA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD066E661B92F69D00424CAA;
+			remoteInfo = Signal;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		BD066E671B92F69D00424CAA /* Signal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Signal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -18,6 +29,8 @@
 		BD066E781B92F72300424CAA /* Base.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
 		BD066E7A1B92F98400424CAA /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		BD066E7B1B92F98400424CAA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BD066E801B92F9FD00424CAA /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD066E841B92F9FD00424CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -25,6 +38,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD066E7D1B92F9FD00424CAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD066E851B92F9FD00424CAA /* Signal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +58,7 @@
 				BD066E681B92F69D00424CAA /* Products */,
 				BD066E771B92F6E900424CAA /* Resources */,
 				BD066E721B92F6E600424CAA /* Source */,
+				BD066E811B92F9FD00424CAA /* Tests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -44,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				BD066E671B92F69D00424CAA /* Signal.framework */,
+				BD066E801B92F9FD00424CAA /* Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -65,6 +88,14 @@
 				BD066E781B92F72300424CAA /* Base.xcconfig */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		BD066E811B92F9FD00424CAA /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				BD066E841B92F9FD00424CAA /* Info.plist */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +130,24 @@
 			productReference = BD066E671B92F69D00424CAA /* Signal.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		BD066E7F1B92F9FD00424CAA /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD066E881B92F9FD00424CAA /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				BD066E7C1B92F9FD00424CAA /* Sources */,
+				BD066E7D1B92F9FD00424CAA /* Frameworks */,
+				BD066E7E1B92F9FD00424CAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BD066E871B92F9FD00424CAA /* PBXTargetDependency */,
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = BD066E801B92F9FD00424CAA /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -109,6 +158,9 @@
 				ORGANIZATIONNAME = felixgabel;
 				TargetAttributes = {
 					BD066E661B92F69D00424CAA = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					BD066E7F1B92F9FD00424CAA = {
 						CreatedOnToolsVersion = 7.0;
 					};
 				};
@@ -126,6 +178,7 @@
 			projectRoot = "";
 			targets = (
 				BD066E661B92F69D00424CAA /* Signal */,
+				BD066E7F1B92F9FD00424CAA /* Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -139,6 +192,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BD066E7E1B92F9FD00424CAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -149,7 +209,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BD066E7C1B92F9FD00424CAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BD066E871B92F9FD00424CAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BD066E661B92F69D00424CAA /* Signal */;
+			targetProxy = BD066E861B92F9FD00424CAA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		BD066E6D1B92F69D00424CAA /* Debug */ = {
@@ -274,6 +349,28 @@
 			};
 			name = Release;
 		};
+		BD066E891B92F9FD00424CAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.felixgabel.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BD066E8A1B92F9FD00424CAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.felixgabel.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -293,6 +390,16 @@
 				BD066E711B92F69D00424CAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD066E881B92F9FD00424CAA /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD066E891B92F9FD00424CAA /* Debug */,
+				BD066E8A1B92F9FD00424CAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
