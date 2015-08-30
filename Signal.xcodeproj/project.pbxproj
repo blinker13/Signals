@@ -16,6 +16,8 @@
 		BD066E731B92F6E600424CAA /* Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Signal.h; sourceTree = "<group>"; };
 		BD066E741B92F6E600424CAA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD066E781B92F72300424CAA /* Base.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
+		BD066E7A1B92F98400424CAA /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		BD066E7B1B92F98400424CAA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,8 @@
 		BD066E771B92F6E900424CAA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BD066E7A1B92F98400424CAA /* LICENSE.md */,
+				BD066E7B1B92F98400424CAA /* README.md */,
 				BD066E741B92F6E600424CAA /* Info.plist */,
 				BD066E781B92F72300424CAA /* Base.xcconfig */,
 			);
