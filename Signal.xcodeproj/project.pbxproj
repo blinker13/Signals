@@ -18,6 +18,10 @@
 		BD33F71A1BA4F2A200842EF0 /* Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD33F7191BA4F2A200842EF0 /* Apply.swift */; settings = {ASSET_TAGS = (); }; };
 		BD33F71C1BA4F3B000842EF0 /* Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD33F71B1BA4F3B000842EF0 /* Dispatch.swift */; settings = {ASSET_TAGS = (); }; };
 		BD33F71E1BA69D0E00842EF0 /* Barrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD33F71D1BA69D0E00842EF0 /* Barrier.swift */; settings = {ASSET_TAGS = (); }; };
+		BD33F7201BA6A36000842EF0 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD33F71F1BA6A36000842EF0 /* Semaphore.swift */; settings = {ASSET_TAGS = (); }; };
+		BD33F7261BA6A4C000842EF0 /* Lockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD33F7231BA6A4C000842EF0 /* Lockable.swift */; settings = {ASSET_TAGS = (); }; };
+		BD33F7271BA6A4C000842EF0 /* RecursiveLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD33F7241BA6A4C000842EF0 /* RecursiveLock.swift */; settings = {ASSET_TAGS = (); }; };
+		BD33F72B1BA6A84200842EF0 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD33F72A1BA6A84200842EF0 /* Lock.swift */; settings = {ASSET_TAGS = (); }; };
 		BDB843411B92FFFC002D4CA8 /* Quality.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB843401B92FFFC002D4CA8 /* Quality.swift */; settings = {ASSET_TAGS = (); }; };
 		BDB843431B93000A002D4CA8 /* QualityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB843421B93000A002D4CA8 /* QualityTests.swift */; settings = {ASSET_TAGS = (); }; };
 		BDB843481B9300C8002D4CA8 /* SystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB843471B9300C8002D4CA8 /* SystemTests.swift */; settings = {ASSET_TAGS = (); }; };
@@ -49,6 +53,10 @@
 		BD33F7191BA4F2A200842EF0 /* Apply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apply.swift; sourceTree = "<group>"; };
 		BD33F71B1BA4F3B000842EF0 /* Dispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatch.swift; sourceTree = "<group>"; };
 		BD33F71D1BA69D0E00842EF0 /* Barrier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Barrier.swift; sourceTree = "<group>"; };
+		BD33F71F1BA6A36000842EF0 /* Semaphore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semaphore.swift; sourceTree = "<group>"; };
+		BD33F7231BA6A4C000842EF0 /* Lockable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lockable.swift; sourceTree = "<group>"; };
+		BD33F7241BA6A4C000842EF0 /* RecursiveLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecursiveLock.swift; sourceTree = "<group>"; };
+		BD33F72A1BA6A84200842EF0 /* Lock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
 		BDB843401B92FFFC002D4CA8 /* Quality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quality.swift; sourceTree = "<group>"; };
 		BDB843421B93000A002D4CA8 /* QualityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QualityTests.swift; sourceTree = "<group>"; };
 		BDB843451B9300BC002D4CA8 /* System.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
@@ -100,6 +108,7 @@
 			children = (
 				BD066E731B92F6E600424CAA /* Signal.h */,
 				BD33F7141BA4F0BD00842EF0 /* Actions */,
+				BD33F7211BA6A49700842EF0 /* Locking */,
 				BD33F7091BA4A1A800842EF0 /* Queueing */,
 				BDB843441B93004A002D4CA8 /* Utility */,
 			);
@@ -146,6 +155,17 @@
 				BD33F7171BA4F21500842EF0 /* Work.swift */,
 			);
 			name = Actions;
+			sourceTree = "<group>";
+		};
+		BD33F7211BA6A49700842EF0 /* Locking */ = {
+			isa = PBXGroup;
+			children = (
+				BD33F72A1BA6A84200842EF0 /* Lock.swift */,
+				BD33F7231BA6A4C000842EF0 /* Lockable.swift */,
+				BD33F7241BA6A4C000842EF0 /* RecursiveLock.swift */,
+				BD33F71F1BA6A36000842EF0 /* Semaphore.swift */,
+			);
+			name = Locking;
 			sourceTree = "<group>";
 		};
 		BDB843441B93004A002D4CA8 /* Utility */ = {
@@ -269,12 +289,16 @@
 			files = (
 				BD33F7111BA4A9D800842EF0 /* System.swift in Sources */,
 				BD33F7181BA4F21500842EF0 /* Work.swift in Sources */,
+				BD33F7201BA6A36000842EF0 /* Semaphore.swift in Sources */,
 				BD33F71E1BA69D0E00842EF0 /* Barrier.swift in Sources */,
 				BD33F7161BA4F0DD00842EF0 /* After.swift in Sources */,
 				BD33F7101BA4A9D300842EF0 /* Time.swift in Sources */,
+				BD33F7271BA6A4C000842EF0 /* RecursiveLock.swift in Sources */,
+				BD33F72B1BA6A84200842EF0 /* Lock.swift in Sources */,
 				BDB843411B92FFFC002D4CA8 /* Quality.swift in Sources */,
 				BD33F71A1BA4F2A200842EF0 /* Apply.swift in Sources */,
 				BD33F70B1BA4A1C400842EF0 /* Queue.swift in Sources */,
+				BD33F7261BA6A4C000842EF0 /* Lockable.swift in Sources */,
 				BD33F71C1BA4F3B000842EF0 /* Dispatch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
