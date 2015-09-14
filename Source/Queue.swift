@@ -12,12 +12,16 @@ public final class Queue {
 
     //MARK: -
 
-    internal let object:dispatch_queue_t
+    public var barrier:Barrier {
+        return Barrier(object:object)
+    }
 
     public var name:String {
         let label = dispatch_queue_get_label(object)
         return String(stringInterpolationSegment:label)
     }
+
+    private let object:dispatch_queue_t
 
     //MARK: -
 
