@@ -4,12 +4,12 @@ import Dispatch
 
 public struct Barrier {
 
-    private let object:dispatch_queue_t
+    private let handle:dispatch_queue_t
 
     //MARK: -
 
-    internal init(object:dispatch_queue_t) {
-        self.object = object
+    internal init(handle:dispatch_queue_t) {
+        self.handle = handle
     }
 }
 
@@ -18,6 +18,6 @@ public struct Barrier {
 extension Barrier : Dispatch {
     public func dispatch(sync:Bool, block:() -> Void) {
         let dispatch = sync ? dispatch_barrier_sync : dispatch_barrier_async
-        dispatch(object, block)
+        dispatch(handle, block)
     }
 }

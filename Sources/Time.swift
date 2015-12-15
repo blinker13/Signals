@@ -3,11 +3,11 @@ import Darwin
 import Dispatch
 
 
-public enum Time {
+public enum Time : Hashable, CustomStringConvertible {
 
     case Now
-    case Forever
     case Interval(Double)
+    case Forever
 
     //MARK: -
 
@@ -33,16 +33,16 @@ public enum Time {
     internal var nano:UInt64 {
         switch self {
             case .Now: return UInt64.min
-            case .Forever: return UInt64.max
             case .Interval(let interval): return UInt64(interval * Double(NSEC_PER_SEC))
+            case .Forever: return UInt64.max
         }
     }
 
     internal var spec:mach_timespec_t {
         switch self {
             case .Now: return mach_timespec_t()
-            case .Forever: return mach_timespec_t(tv_sec:UInt32.max, tv_nsec:Int32.max)
             case .Interval: return mach_timespec_t(tv_sec:seconds, tv_nsec:Int32(nano % NSEC_PER_SEC))
+            case .Forever: return mach_timespec_t(tv_sec:UInt32.max, tv_nsec:Int32.max)
         }
     }
 
@@ -51,29 +51,25 @@ public enum Time {
     private var seconds:UInt32 {
         switch self {
             case .Now: return UInt32.min
-            case .Forever: return UInt32.max
             case .Interval: return UInt32(nano / NSEC_PER_SEC)
+            case .Forever: return UInt32.max
         }
     }
-}
 
-//MARK: - CustomStringConvertible
+    //MARK: - Hashable
 
-extension Time : CustomStringConvertible {
+    public var hashValue:Int {
+        return Int(nano)
+    }
+
+    //MARK: - CustomStringConvertible
+
     public var description:String {
         switch self {
             case .Now: return "Now"
-            case .Forever: return "Forever"
             case .Interval(let interval): return String(interval)
+            case .Forever: return "Forever"
         }
-    }
-}
-
-//MARK: - Hashable
-
-extension Time : Hashable {
-    public var hashValue:Int {
-        return Int(nano)
     }
 }
 

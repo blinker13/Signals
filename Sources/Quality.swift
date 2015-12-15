@@ -2,14 +2,13 @@
 import Darwin
 
 
-public enum Quality {
+public enum Quality : String {
 
-    case Interactive
-    case Initiated
+    case Live
+    case High
     case Default
-    case Utility
+    case Low
     case Background
-    case Unspecified
 
     //MARK: -
 
@@ -21,18 +20,17 @@ public enum Quality {
     //MARK: -
 
     internal init(_ qos:qos_class_t) {
-        if qos == QOS_CLASS_USER_INTERACTIVE { self = .Interactive }
-        else if qos == QOS_CLASS_USER_INITIATED { self = .Initiated }
-        else if qos == QOS_CLASS_DEFAULT { self = .Default }
-        else if qos == QOS_CLASS_UTILITY { self = .Utility }
+        if qos == QOS_CLASS_USER_INTERACTIVE { self = .Live }
+        else if qos == QOS_CLASS_USER_INITIATED { self = .High }
+        else if qos == QOS_CLASS_UTILITY { self = .Low }
         else if qos == QOS_CLASS_BACKGROUND { self = .Background }
-        else { self = .Unspecified }
+        else { self = .Default }
     }
 
     internal init(_ pthread:pthread_t) {
         var qos = qos_class_t(0)
         let state = pthread_get_qos_class_np(pthread, &qos, nil)
-        if state != 0 { qos = QOS_CLASS_UNSPECIFIED }
+        if state != 0 { qos = QOS_CLASS_DEFAULT }
         self = Quality(qos)
     }
 
@@ -40,27 +38,11 @@ public enum Quality {
 
     internal var qos:qos_class_t {
         switch self {
-            case .Interactive: return QOS_CLASS_USER_INTERACTIVE
-            case .Initiated: return QOS_CLASS_USER_INITIATED
+            case .Live: return QOS_CLASS_USER_INTERACTIVE
+            case .High: return QOS_CLASS_USER_INITIATED
             case .Default: return QOS_CLASS_DEFAULT
-            case .Utility: return QOS_CLASS_UTILITY
+            case .Low: return QOS_CLASS_UTILITY
             case .Background: return QOS_CLASS_BACKGROUND
-            case .Unspecified: return QOS_CLASS_UNSPECIFIED
-        }
-    }
-}
-
-//MARK: - CustomStringConvertible
-
-extension Quality : CustomStringConvertible {
-    public var description:String {
-        switch self {
-            case .Interactive: return "Interactive"
-            case .Initiated: return "Initiated"
-            case .Default: return "Default"
-            case .Utility: return "Utility"
-            case .Background: return "Background"
-            case .Unspecified: return "Unspecified"
         }
     }
 }
